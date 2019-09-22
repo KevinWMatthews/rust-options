@@ -3,11 +3,11 @@ Transform an Option into a different Option if it is None.
 Return the Option otherwise.
 The new Option is directly returned by the caller-provided closure.
 
-If Option<T> contains Some<v>, simply return Some<v>
+If Option<T> contains Some(v), simply return Some(v)
 If Option<T> contains None, call the closure and return its result
 
 For Option<T>.or_else(closure)
-if Option<T> is Some<v>, return Some<V>
+if Option<T> is Some(v), return Some(v)
 if Option<T> is None, return closure()
 
 The closure must:

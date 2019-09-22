@@ -2,7 +2,7 @@ fn main() {
     /*
     Options are an enum variant:
     enum Option<T> {
-        Some<T>,
+        Some(T),
         None,
     }
     They either contain:

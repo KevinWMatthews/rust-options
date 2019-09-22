@@ -3,11 +3,11 @@ Transform an Option if it is None.
 Return the Option otherwise.
 The new Option is directly provided by the caller.
 
-If Option<T> contains Some<v>, simply return Some<v>
+If Option<T> contains Some(v), simply return Some(v)
 If Option<T> contains None, return the caller-provided Option
 
 For Option<T>.or(opt)
-if Option<T> is Some<v>, return Some<v>
+if Option<T> is Some(v), return Some(v)
 if Option<T> is None, return opt
 
 Returns:

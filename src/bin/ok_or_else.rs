@@ -3,11 +3,11 @@ Transform an Option into a Result:
 Option<T> -> Result<T, E>
 The *value* of the Error is returned by the caller-provided closure.
 
-If Option<T> contains Some(v), simply return Result<v>
+If Option<T> contains Some(v), simply return Ok(v)
 If Option<T> contains None, call a user-supplied closure and wrap the result in an Err type
 
 For Option<T>.ok_or(err_closure)
-if Option<T> is Some(v), return Ok<v>
+if Option<T> is Some(v), return Ok(v)
 if Option<T> is None, return Err(err_closure())
 
 https://doc.rust-lang.org/std/option/enum.Option.html#method.ok_or_else

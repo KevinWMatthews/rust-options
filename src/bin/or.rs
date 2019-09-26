@@ -1,22 +1,30 @@
 /*
-Transform an Option if it is None.
-Return the Option otherwise.
+Transform a None into a new Option.
+Return a Some unchanged.
+
+This allows the caller to suppress or modify None options while preserving Some values.
+
+Note that the type of Some can not be changed.
+
 The new Option is directly provided by the caller.
 
-If Option<T> contains Some(v), simply return Some(v)
-If Option<T> contains None, return the caller-provided Option
+Evaluates similar to a logical or:
+if the first relation is true, return the first relation.
+if the first relation is false, return the second relation.
 
-For Option<T>.or(opt)
-if Option<T> is Some(v), return Some(v)
-if Option<T> is None, return opt
-
-Returns:
-if Some, the original Option
-if None, the given Option
-
-Returns the original Option (if Some) *or* the given Option.
+ A      or   B
+-----------------
+*Some   or   Some
+*Some   or   None
+ None   or  *Some
+ None   or  *None
 
 https://doc.rust-lang.org/std/option/enum.Option.html#method.or
+pub fn or(self, optb: Option<T>) -> Option<T>
+
+For original_option.or(new_option)
+if the original Option<T> is Some, return the original Option<T>.
+if the original Option<T> is None, return the new Option<T>.
 */
 
 
@@ -27,6 +35,7 @@ fn main() {
     // let other: Option<i32> = None;
 
     let new_option = option.or(other);
+    dbg!(option);
     dbg!(new_option);
 
     // with None

@@ -1,6 +1,6 @@
 # Options in Rust
 
-Intro/cheatsheet.
+Intro to the `Option` enum in Rust with exmaples of several methods.
 
 
 ## Links
